@@ -188,13 +188,15 @@ section{position:relative;min-height:100vh;display:flex;flex-direction:column;ju
   /* hide topbar contact button — contact is in bottom nav */
   .topbar{display:none;}
 
-  /* hero: full width, centered */
-  .hero{left:24px;right:24px;max-width:100%;text-align:left;}
+  /* hero: stacked layout — spiral top, text bottom */
+  #hero{display:flex;flex-direction:column;justify-content:flex-start;padding-top:0;}
+  .hero{position:relative;left:auto;top:auto;transform:none;max-width:100%;text-align:center;padding:0 24px 32px;order:2;margin-top:16px;}
   .hero-sub{font-size:.62rem;}
-  .hero-typed-line{font-size:clamp(2rem,8vw,2.8rem);}
+  .hero-typed-line{font-size:clamp(2rem,8vw,2.8rem);justify-content:center;}
+  .hero-typed-wrapper{align-items:center;}
 
-  /* spiral scales down and goes behind */
-  #spiral{width:90%;right:-20%;top:50%;opacity:.35;}
+  /* spiral: top half of screen */
+  #spiral{position:relative;right:auto;top:auto;transform:none;width:100%;aspect-ratio:1;max-height:42vh;opacity:.9;order:1;flex-shrink:0;}
 
   /* sections */
   section{padding:70px 24px 80px;min-height:100svh;}
